@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        .continer {
+            width: 70%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 50px;
+
+        }
+        .button a:hover {
+            cursor: pointer;
+            color: coral;
+
+
+        }
+
+        .button {
+            padding: 7px;
+            border-radius: 5px;
+
+        }
+        .continer input{
+            width: 70%;
+            padding: 3px;
+
+        }
+        .continer textarea {
+            width: 70%;
+            padding: 3px;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: black;
+
+         }
+
+
+    </style>
+</head>
+<body>
+    <form method ="post">
+        {% csrf_token %}
+        <div class="continer">
+
+            <h1>Add a New Programming Languages</h1><br>
+
+            <label for="name">Languages Name:</label><br><br>
+            <input type="text" name="name" id="name"><br><br>
+
+
+            <label for="description">Description:</label><br><br>
+                <textarea name="description" id="description" rows = "10" required></textarea><br><br><br>
+
+            <input class="tugma" type="submit" value="Creat Meal" style="padding: 10px; cursor: pointer; "><br><br>
+            <button class="button"><a href="{% url 'programs:post_list' %}">Back to List</a></button>
+
+        </div>
+    </form>
+</body>
+</html>
